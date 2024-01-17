@@ -1,0 +1,584 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    font-family: "Nunito Sans";
+}
+
+/**---------------------------------------PÄRAMETRES GENERAUX*----------------------------------------------------*/
+
+li{
+    list-style: none;
+}
+
+/**--------------------------------------------------------NAV------------------------------------------------------------------------------------------------------------ */
+  
+nav{
+    position: sticky;
+    z-index: 3;
+
+    width: 100%;
+    height: 50px;
+
+    background-color: #4C4C4C;
+}
+/**MENU HAMBURGER**/
+.checkbox{
+    display: none;
+}
+#label{
+    display: none;
+   
+
+}
+.logo{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 999;
+  
+}
+/**--------------NAV ITEMS-------------------------------------*/
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #4C4C4C;
+}
+
+nav ul>li{
+    line-height: 50px;
+    
+   
+    text-transform: uppercase;
+    font-family: 'Nunito Sans';
+    color: #fff;
+    
+    margin: auto 20px;
+    position: relative;
+}
+nav ul>li::after{
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    display: block;
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.2s ease-in-out;
+
+}
+nav ul>li:hover::after{
+
+    width: 100%;
+}
+
+
+
+
+/**-------------------------------------------------------------Header-------------------------------------------------------------------*/
+    /*Container*/
+    header{
+        width: 100%;
+        height: 100vh;
+        min-height: 1000px;
+        color: #fff;
+
+        background: url("Kyoto/accueil-pic-lum-down.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    /*Title*/
+    header h1{
+        font-family: 'Merienda One', cursive;
+        font-size: 3rem;
+       text-shadow: 0 0 200px #000;
+    }
+    /*Subtitle*/
+    header p {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-shadow: 0 0 200px #000;
+    }
+    /*Logo*/
+    header>img{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+      /*Button*/
+    header button{
+        margin: 30px ;
+        font-size: 0.9rem;
+
+        display: block;
+        width: 200px;
+        height: 50px;
+
+        background-color: #DC143C;
+        color: #fff;
+        border: 1px solid #DC143C;
+        border-radius: 65px ;
+    }
+    header button:hover{
+        transition: all 0.3s ease-in-out ;
+        background-color:rgb(177,0,36) ;
+    }
+/**------------------------------------------------------Gallery----------------------------------------------- */
+    /**CONTAINER */
+    .gallery_container{
+        display: grid;
+        /**Grid row template / Grid column template*/
+        grid-template: 200px repeat(3,auto) /  1fr 600px 1fr;
+        background-color: #fff;
+    }
+    /**TITLE*/
+    .gallery_container h2{
+        text-align: center;
+        font-family: "Nunito Sans";
+        text-transform: uppercase;
+        color: #393333;
+        padding-bottom: 20px;
+        grid-area: 1/1/2/-1;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    }    
+    /**PARAMETES CONTAINER GENERAUX */
+    .container{
+        height: 750px;
+        background-color: #333;
+        color :#fff;
+        margin-bottom: 250px;
+        position: relative;
+        
+    }
+    /**PARAMETRES IMAGES GENERAL */
+    .img{
+        width: 500px;
+        height: 700px;
+        position: relative;
+    }
+    /**PARAMETRES BUTTON*/
+    .gallery_container button{
+        background-color: #FF0033;
+        border-radius: 66px;
+        display: block;
+        cursor: pointer;
+        font-size: 1rem;
+        color : #fff; 
+        padding: 20px 40px;
+        margin: 5px auto;
+        border:  1px solid #333;
+    }
+     /**PARAMETRES CONTAINER LEFT*/
+     .container-left{
+        left:-300px;
+    }
+    .container-left>.text-container{
+        width:50%;
+        height: 100%;
+    }
+    .container-left>.text-container>p{
+        padding:15px;
+        line-height: 30px;
+    }
+    .container-left>.text-container>h3{
+        font-size: 35px;
+        margin:30px 15px;
+    }
+     /** PLACEMENT IMAGE LEFT**/
+     .img-1, .img-3{
+        top:130px;
+        left:5px;
+    }
+    /**PLACEMENT CONTAINER SUR LA GRID 1**/
+    .culture-1, .img-1{
+        grid-area: 2/2/3/3;
+    }
+   
+    /**PLACEMENT CONTAINER 3 SUR LA GRID **/
+    .culture-3, .img-3{
+        grid-area:4/2/5/3 ;
+    }
+   
+   
+    /**PARAMETRS CONTAINER RIGHT*/
+    .container-right{
+        right:-300px
+    }
+    .img-2{
+        top:130px;
+        left:100px;
+    }
+    .container-right .text-container{
+        position: absolute;
+        right:0;
+        width: 50%;
+      
+    }
+    .container-right .text-container h3{
+        font-size: 35px;
+        margin:30px 15px;
+    }
+    .container-right .text-container p{
+        padding:15px;
+        line-height: 30px;
+    }
+     /**PLACEMENT CONTAINER 2 SUR LA GRID **/
+     .culture-2, .img-2{
+        grid-area: 3/2/4/3
+    }
+    /**PARAMETRES LIGNES*/
+    /* Lignes Verticales */
+    .left{
+        border-left: 1px solid #333;
+        grid-area: 1/2/-1/3;
+      
+    
+    }
+    .right{
+        border-left: 1px solid #333;
+        grid-area: 1/3/-1/4;
+    }
+  /**------------------------------------------------------------Paralllax----------------------------------------------------------------------------------------*/  
+  .parallax{
+    background : url("Kyoto/parallax-large-flou.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+
+    width: 100%;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    color: #fff;
+  }
+
+ .parallax h4{
+        font-size: 2rem;
+ }
+ .parallax p {
+    font-size: 1.2rem;
+ }
+  /**---------------------------TARIFS-----------------------------------------------------------------------------------------------*/
+  /**---------------SECTION*/
+  .tarifs{
+    color: #000;
+    width: 100%;
+    
+   padding-bottom: 5vh;  
+    border-bottom: 1px dashed#000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  /**TITLE + LIGNE*/
+  .tarifs h2{
+    color: #000;
+    font-size: 1.8rem;
+ }
+  .tarifs hr {
+    width: 300px;
+    margin: 20px auto 100px auto;
+  }
+  /**---------CARD*/
+ .card-container{
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+ }
+  .card{
+    width: 350px;
+    height: auto;
+    max-width: 350px;
+
+    box-shadow: 1px 1px 18px 2px #CFCFCF;
+    margin: 20px;
+    color:#000;
+    text-transform: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    transition: all 0.3s ease-in-out;
+  }
+  .card:hover{
+    transform: translateY(10px);
+  }
+
+ /**Title Card*/ 
+.card_title{
+    width: 100%;
+    height: 15%; 
+    
+    clip-path: polygon(100% 0, 100% 70%, 0 100%, 0 0);
+}
+.card_title h3{
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 25px auto;
+}
+.card ul{
+    width: 100%;
+    height: 80%;
+   
+}
+/**Ou nth:child*/
+/**Background card Classique*/
+.card_1 > .card_title{
+    background-color: #FFAFBF;
+}
+/**Background card Découverte*/
+.card_2 > .card_title{
+    background-color: #FF5073;
+}
+/**Background card Exception*/
+.card_3 > .card_title{
+    background-color: #FF0033;
+}
+ 
+/**SUBTITLE PRIX*/
+.card p {
+    padding: 15px 10px;
+    font-size: 1.3rem;
+    font-weight: bold;    
+}
+/**Contenu Card*/
+.card ul>li {
+    font-size: 1.2rem;
+    padding: 15px 10px;
+    border-top: 1px solid gray ;
+}
+.card ul>li:nth-child(odd){
+    background-color: #e6e4e4 ;
+}
+.card ul>li:last-child{
+    border-bottom: 1px solid gray;
+}
+
+/**Button*/
+.card button{
+    margin: 50px auto;
+    background-color: transparent;
+    padding: 15px;
+    border-radius: 66px;
+    border : 1px solid gray ;
+    
+}
+/**Hover Button*/
+.card button:hover{
+    background-color: #333;
+    color: #f1f1f1;
+}
+/**----------------------------------------------------------------------FORM-----------------------------------------------------------------------*/
+.form-container{
+    width: 100%;
+    height: 500px;
+    padding-bottom: 100px;
+}
+.form-container h4{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+}
+form{
+    width: 70%;
+    margin: 10px auto;
+    
+}
+/**------LABEL----*/
+form label{
+       font-size: 1rem;
+        font-family: "Nunito Sans";
+        font-weight: 500;
+}
+/**---INPUT--------*/
+input{
+        width: 100%;
+        border: none;
+        display: block;
+        border-bottom: 1px solid #000;
+        padding: 10px 0px;
+        outline: none;
+        margin-bottom: 10px;
+}
+/**Textarea**/
+textarea{
+    width: 100%;
+    height: 150px;
+    background-color: #F1F1F1;
+    border: 1px solid #aaa;
+    outline: none;
+    font-size: 1rem;
+}
+form button{
+    font-size: 1rem ;
+    margin-top: 10px;
+    border-radius: 65px;
+    width: auto;
+    padding: 15px 50px;
+  
+    background-color: #fff;
+    border: 1px solid #000;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    
+}
+form button:hover {
+    background-color: #000;
+    color: #fff;
+}
+/***-----------------------------------------------------------------------------------------FOOTER------------------------------------------------------------*/
+footer{
+    background-color: #fff;
+    width: 100%;
+    border-top: 1px solid #000;
+    text-align: center;
+    padding: 10px;
+}
+
+
+/**BREAKPOINTS*/
+/**GALLERY*/
+@media screen and (max-width :1200px) {
+    .gallery_container{
+        grid-template: 200px repeat(6, auto) 100px / 1fr 600px 1fr;
+    }
+    /*PARAMETRE GENERAUX*/
+    .container{
+        margin-bottom: 0px;
+            height: 100%;
+    }
+    .container h3{
+        text-align: center;
+    }
+    .container p{
+        padding: 15px;
+        line-height: 1.5;
+    }
+    .img{
+        position: static;
+            width: 600px;
+            height: 750px;
+    }
+    
+    
+    /*LEFT*/
+    .container-left{
+        left:0px;
+    }
+    .container-left>.text-container{
+        width: 100%;
+        height: 100%;
+    }
+    .culture-1{
+        grid-area:2/2/3/3;
+    }
+    .img-grid-1, .img-grid-3{
+        top:0px;
+        left:0px;
+    }
+    
+    .img-1{
+        grid-area: 3/2/4/3;
+    }
+    .culture-3{
+        grid-area: 6/2/7/3; 
+    }
+    .img-3{
+        grid-area: 7/2/8/3
+    }
+    /*RIGHT*/
+    .container-right>.text-container{
+        position: static;
+        width: 100%;
+        height: 100%;
+    }
+    .culture-2{
+        grid-area: 4/2/5/3;
+    }
+    .img-2{
+        top:0px;
+        left:0px;
+        grid-area: 5/2/6/3;
+    }
+    .container-right{
+        right: 0px;
+    }
+    /**BUTTON*/
+    .container>button{
+        font-size: 20px;
+        margin-bottom: 30px;
+        padding: 15px 30px;
+    }
+} 
+@media screen and (max-width:600px) {
+       .gallery_container{
+        grid-template: 150px repeat(6 ,auto) 100px / 100%
+       } 
+       .container, .img{
+        grid-area: auto;
+       }
+       .img{
+        width: 100%;
+        height: auto;
+       }
+    .left, .right {
+        display: none;
+    }   
+}
+@media screen and (max-width:450px){
+   #label{
+    display: block;
+   } 
+   .logo{
+    display: block;
+   }
+    nav ul{     
+    display: none;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+   }
+    nav ul li {
+        height: 75px;
+        
+   }
+   .checkbox:checked ~ul {
+    display: flex;
+}
+   nav ul li:first-child{
+    margin-top:70px;
+   }
+   .card{
+        margin: none;
+        max-width: 310px;
+   }
+}
